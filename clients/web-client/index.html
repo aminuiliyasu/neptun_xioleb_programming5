@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distributed Game System - Web Client</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Distributed Game System</h1>
+            <p>Rock Paper Scissors - Web Client</p>
+        </header>
+
+        <!-- Login/Register Section -->
+        <div id="auth-section" class="section">
+            <div class="auth-tabs">
+                <button id="login-tab" class="tab active">Login</button>
+                <button id="register-tab" class="tab">Register</button>
+            </div>
+
+            <div id="login-form" class="auth-form">
+                <h2>Login</h2>
+                <input type="text" id="login-username" placeholder="Username" required>
+                <input type="password" id="login-password" placeholder="Password" required>
+                <button id="login-btn">Login</button>
+            </div>
+
+            <div id="register-form" class="auth-form hidden">
+                <h2>Register</h2>
+                <input type="text" id="register-username" placeholder="Username" required>
+                <input type="password" id="register-password" placeholder="Password" required>
+                <button id="register-btn">Register</button>
+            </div>
+        </div>
+
+        <!-- Game Section -->
+        <div id="game-section" class="section hidden">
+            <div class="user-info">
+                <span id="welcome-message"></span>
+                <button id="logout-btn">Logout</button>
+            </div>
+
+            <div class="game-controls">
+                <div class="room-controls">
+                    <h3>Room Management</h3>
+                    <div class="room-actions">
+                        <input type="text" id="room-name" placeholder="Room name (optional)">
+                        <button id="create-room-btn">Create Room</button>
+                        <input type="text" id="join-room-id" placeholder="Room ID">
+                        <button id="join-room-btn">Join Room</button>
+                        <button id="list-rooms-btn">List Rooms</button>
+                        <button id="leave-room-btn" class="hidden">Leave Room</button>
+                    </div>
+                </div>
+
+                <div id="rooms-list" class="rooms-list hidden">
+                    <h4>Available Rooms</h4>
+                    <div id="rooms-container"></div>
+                </div>
+
+                <div id="current-room" class="current-room hidden">
+                    <h3>Current Room</h3>
+                    <div id="room-info"></div>
+                    <div id="room-players"></div>
+                </div>
+
+                <div id="game-area" class="game-area hidden">
+                    <h3>Game</h3>
+                    <div id="game-info"></div>
+                    <div id="game-status"></div>
+                    <div id="move-buttons" class="move-buttons hidden">
+                        <button class="move-btn" data-move="rock">Rock</button>
+                        <button class="move-btn" data-move="paper">Paper</button>
+                        <button class="move-btn" data-move="scissors">Scissors</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Status Messages -->
+        <div id="status-messages" class="status-messages"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
