@@ -28,16 +28,19 @@ echo "Starting microservices..."
 echo "Starting User Service (port 3001)..."
 cd services/user-service && npm start &
 USER_PID=$!
+cd ../..
 
 # Start Room Service  
 echo "Starting Room Service (port 3002)..."
-cd ../room-service && npm start &
+cd services/room-service && npm start &
 ROOM_PID=$!
+cd ../..
 
 # Start Game Service
 echo "Starting Game Service (port 3003)..."
-cd ../game-service && npm start &
+cd services/game-service && npm start &
 GAME_PID=$!
+cd ../..
 
 # Wait a moment for services to start
 sleep 3
