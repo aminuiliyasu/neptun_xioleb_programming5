@@ -1,0 +1,25 @@
+{
+  "name": "distributed-game-system",
+  "version": "1.0.0",
+  "description": "Distributed Two Person Game System with Microservices",
+  "main": "index.js",
+  "scripts": {
+    "start:services": "concurrently \"npm run start:user-service\" \"npm run start:room-service\" \"npm run start:game-service\"",
+    "start:user-service": "cd services/user-service && npm start",
+    "start:room-service": "cd services/room-service && npm start", 
+    "start:game-service": "cd services/game-service && npm start",
+    "start:cli": "cd clients/cli-client && npm start",
+    "start:web": "cd clients/web-client && npm start",
+    "start:mobile": "cd clients/mobile-client && npm start",
+    "install:all": "npm install && cd services/user-service && npm install && cd ../room-service && npm install && cd ../game-service && npm install && cd ../../clients/cli-client && npm install && cd ../web-client && npm install && cd ../mobile-client && npm install",
+    "build": "npm run build:services && npm run build:clients",
+    "build:services": "cd services/user-service && npm run build && cd ../room-service && npm run build && cd ../game-service && npm run build",
+    "build:clients": "cd clients/cli-client && npm run build && cd ../web-client && npm run build && cd ../mobile-client && npm run build"
+  },
+  "keywords": ["microservices", "websocket", "game", "distributed", "nodejs"],
+  "author": "Aminu Iliyasu",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
